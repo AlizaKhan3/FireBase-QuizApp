@@ -64,7 +64,6 @@ function loginNow(){
       text: "Something went wrong! " + errorMessage,
     });
     });
-
 }
 
 let loginBtn = document.getElementById("loginBtn");
