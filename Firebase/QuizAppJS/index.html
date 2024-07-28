@@ -2,20 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
-    <title>Quiz App - Register Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <title>Quiz App - Register Form</title>
 </head>
 
 <body>
- <!-- Section: Design Block -->
-<section class="">
+  <!-- Section: Design Block -->
+  <section class="">
     <!-- Jumbotron -->
     <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
       <div class="container">
@@ -32,59 +33,61 @@
               veritatis? Dicta facilis sint aliquid ipsum atque?
             </p>
           </div>
-  
+
           <div class="col-lg-6 mb-5 mb-lg-0">
             <div class="card">
               <div class="card-body py-5 px-md-5">
-                  <!-- 2 column grid layout with text inputs for the first and last names -->
-                  <div class="row">
-                    <div class="col-md-6 mb-4">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="firstName" class="form-control" />
-                        <label class="form-label">First name</label>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="lastName" class="form-control" />
-                        <label class="form-label">Last name</label>
-                      </div>
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="firstName" class="form-control" />
+                      <label class="form-label">First name</label>
                     </div>
                   </div>
-  
-                  <!-- Email input -->
-                  <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="email" id="email" class="form-control"/>
-                    <label class="form-label">Email address</label>
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="lastName" class="form-control" />
+                      <label class="form-label">Last name</label>
+                    </div>
                   </div>
-  
-                  <!-- Password input -->
-                  <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="password" id="password" class="form-control" />
-                    <label class="form-label" for="form3Example4">Password</label>
-                  </div>
-  
-                  <!-- Checkbox -->
-                  <div class="form-check d-flex justify-content-center mb-4">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                    <label class="form-check-label" for="form2Example33">
-                      Subscribe to our newsletter
-                    </label>
-                  </div>
-  
-                  <!-- Submit button -->
-                  <button id="registerBtn" type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
-                    Register Now
-                  </button>
-  
-                  <!-- Register buttons -->
-                  <div class="text-center">
-                    <p>Already have an Account?</p>
-                    <a href="login.html" type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
-                        Login
-                    </a>
-      
-                    <!-- <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                </div>
+
+                <!-- Email input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="email" id="email" class="form-control" />
+                  <label class="form-label">Email address</label>
+                </div>
+
+                <!-- Password input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="password" id="password" class="form-control" />
+                  <label class="form-label" for="form3Example4">Password</label>
+                </div>
+
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                  <label class="form-check-label" for="form2Example33">
+                    Subscribe to our newsletter
+                  </label>
+                </div>
+
+                <!-- Submit button -->
+                <button id="registerBtn" type="submit" data-mdb-button-init data-mdb-ripple-init
+                  class="btn btn-primary btn-block mb-4">
+                  Register Now
+                </button>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>Already have an Account?</p>
+                  <a href="login.html" type="submit" data-mdb-button-init data-mdb-ripple-init
+                    class="btn btn-primary btn-block mb-4">
+                    Login
+                  </a>
+
+                  <!-- <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
                       <i class="fab fa-facebook-f"></i>
                     </button>
   
@@ -99,8 +102,8 @@
                     <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
                       <i class="fab fa-github"></i>
                     </button> -->
-                  </div>
-                
+                </div>
+
               </div>
             </div>
           </div>
@@ -115,8 +118,8 @@
 
 
 
-  
-    <script src="app.js" type="module"></script>
+
+  <script src="app.js" type="module"></script>
 </body>
 
 </html>
