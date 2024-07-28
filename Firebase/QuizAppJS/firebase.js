@@ -18,5 +18,6 @@ const auth = getAuth(app);
 
 export {
     auth,
-    signInWithEmailAndPassword
-}
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword
+  }
