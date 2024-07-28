@@ -23,13 +23,13 @@ const register = () => {
     console.log("User Registered");
     console.log(email.value, password.value)
 
-
     createUserWithEmailAndPassword(auth, email.value, password.value)
     .then((userCredential) => {
       // Signed up 
       const user = userCredential.user;
       console.log("user-->", user)
-    })
+      window.location.href = "./login.html";
+    },3000)
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -52,7 +52,8 @@ function loginNow(){
       // Signed in 
       const user = userCredential.user;
       console.log("Login");
-    })
+      window.location.href = "./quizMain.html";
+    },5000)
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
