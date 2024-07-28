@@ -33,7 +33,12 @@ const register = () => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log("errorMessage", errorMessage)
+      // console.log("errorMessage", errorMessage)
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong! " +  errorMessage,
+      });
     });
 }
 
@@ -51,7 +56,12 @@ function loginNow(){
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-    console.log("error-->", errorMessage)
+    // console.log("error-->", errorMessage)
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Something went wrong! " + errorMessage,
+    });
     });
 
 }
