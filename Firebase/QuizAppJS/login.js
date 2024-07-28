@@ -1,4 +1,4 @@
-import {auth, signInWithEmailAndPassword} from "./firebase"
+import {auth, signInWithEmailAndPassword} from "./firebase.js"
 
 function loginNow(){
     signInWithEmailAndPassword(auth, email.value, password.value)
