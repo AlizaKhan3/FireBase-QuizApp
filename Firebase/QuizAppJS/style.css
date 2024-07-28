@@ -9,3 +9,15 @@
     font-family: Poppins;
     src: url(fonts/Poppins/Poppins-Regular.ttf);
 }
+
+body{
+    background-color: #78c1f3;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quizCard{
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+}
