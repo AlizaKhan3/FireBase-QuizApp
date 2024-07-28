@@ -41,15 +41,6 @@ let registerBtn = document.getElementById("registerBtn");
 registerBtn.addEventListener("click", register);
 
 
-
-
-
-
-
-
-
-
-
 function loginNow(){
     signInWithEmailAndPassword(auth, email.value, password.value)
     .then((userCredential) => {
