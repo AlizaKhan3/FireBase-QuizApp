@@ -58,6 +58,10 @@ body {
     display: none;
 }
 
+.playground, loader{
+    display: none;
+}
+
 
 
 
