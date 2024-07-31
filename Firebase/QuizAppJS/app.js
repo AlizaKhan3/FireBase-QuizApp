@@ -37,16 +37,20 @@ let start = document.getElementById("start");
 start.addEventListener("click", startQuiz);
 
 let arrayQuestion = [];
-score = [];
-count = 30;
-
+let score = [];
+let count = 30;
 
 function startQuiz(){
   if (username.value !== ""){
-    console.log(username.value)
+    console.log(username.value);
+    startScreen.style.display = "none";
+    playground.style.display = "block";
   }else{
     username.style.border = "0.5px solid red"
     username.style.boxShadow = "0 0 10px rgba(255, 0, 0, 0.5)"
   }
 }
 
+function loadQuestions(){
+  
+}
