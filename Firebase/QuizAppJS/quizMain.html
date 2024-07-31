@@ -24,30 +24,30 @@
 
     <div class="card quizCard">
         <div class="card-body">
-            <h2 class="card-title">Quiz Application</h2>
-            <p class="card-text">1. The quiz contains 10 questions. <br></p>
-            <p class="card-text">2. Each question will have a time limit of 30 seconds.<br></p>
-            <p class="card-text">3. You can't reselect another option once selected. <br></p>
-            <p class="card-text">4. Each question is of one mark.<br></p>
-            <input type="text" id="username" placeholder="Username">
-            <br>
-            <button type="button" class="btn btn-primary StartQuiz mt-2" data-mdb-ripple-init>Start Quiz</button>
+          <h2 class="card-title text-center mb-4"><b>Quiz Application</b></h2>
+          <p class="card-text">1. The quiz contains 10 questions. <br></p>
+          <p class="card-text">2. Each question will have a time limit of 30 seconds.<br></p>
+          <p class="card-text">3. You can't reselect another option once selected. <br></p>
+          <p class="card-text">4. Each question is of one mark.<br></p>
+          <div class="d-flex justify-content-center">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text" id="inputGroup-sizing-sm"><b>Your Name:</b> </span>
+              <input type="text" class="form-control" id="username" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+          </div>
+          <div class="d-flex justify-content-center mt-2">
+            <button type="button" class="btn btn-success StartQuiz" data-mdb-ripple-init>Start Quiz</button>
+          </div>
         </div>
+      </div>
+<!-- Open Quiz Page -->
+ <div class="container playground">
+    <div class="quizHeader">
+        <div><span>1</span> of 5 Questions</div>
     </div>
 
-    <!-- <div class="container">
-        <h2>Quiz Application</h2>
-        1. The quiz contains 10 questions. <br>
-        2. Each question will have a time limit of 30 seconds. <br>
-        3. You can't reselect another option once selected. <br>
-        4. Each question is of one mark.
-
-        <div class="btn">
-            <input type="text" id="username" placeholder="Username">
-            <br>
-            <button class="StartQuiz">Start Quiz</button>
-        </div>
-    </div> -->
+ </div>
+    
 
 
 
