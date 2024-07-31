@@ -37,34 +37,36 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center mt-2">
-                <button type="button" class="btn btn-success StartQuiz" data-mdb-ripple-init  id="start">Start Quiz</button>
+                <button type="button" class="btn btn-success StartQuiz" data-mdb-ripple-init id="start">Start
+                    Quiz</button>
             </div>
         </div>
     </div>
     <!-- Open Quiz Page -->
-    <div class="playground card quizCard">
-        <div class="card-body">
-            <div class="quizHeader d-flex align-items-center justify-content-between mb-1">
-                <div><span id="questionNumber">1</span> of 5 Questions</div>
-                <div>
-                    <i class="fa-solid fa-stopwatch"></i>
-                    <span id="timer"> 10 </span>
+    <div class="playground">
+    <div class="card quizCard ">
+            <div class="card-body">
+                <div class="quizHeader d-flex align-items-center justify-content-between mb-1">
+                    <div><span id="questionNumber">1</span> of 5 Questions</div>
+                    <div>
+                        <i class="fa-solid fa-stopwatch"></i>
+                        <span id="timer"> 10 </span>
+                    </div>
                 </div>
-            </div>
-            <div class="quizBody">
-                <h3 class="card-title text-center mb-4" id="question">question Lorem ipsum dolor sit am</h3>
-                <ul id="options"></ul>
-            </div>
-            <div class="loader text-center m-5">
-                <i class="fa-solid fa-gear fa-spin"></i>
-            </div>
-            <div class="quizFooter text-end">
-                <button type="button" class="btn btn-success StartQuiz" data-mdb-ripple-init>Next</button>
+                <div class="quizBody">
+                    <h3 class="card-title text-center mb-4" id="question"></h3>
+                    <ul id="options"></ul>
+                </div>
+                <div class="loader text-center m-5">
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                </div>
+                <div class="quizFooter text-end">
+                    <button type="button" class="btn btn-success StartQuiz" data-mdb-ripple-init>Next</button>
+                </div>
             </div>
         </div>
     </div>
     </div>
-
     <script src="app.js" type="module"></script>
 </body>
 
