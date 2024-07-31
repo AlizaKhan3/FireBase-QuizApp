@@ -41,7 +41,21 @@ body {
   }
 
 .btn{
+    cursor: pointer;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.quizBody{
+    padding: 10px 0;
+    margin: 10px 0;
+}
+
+.loader i{
+    font-size: 50px;
+}
+
+.playground{
+    display: none;
 }
 
 
