@@ -25,7 +25,7 @@ const username = document.getElementById("username");
 const startScreen = document.querySelector(".startScreen");
 const endScreen = document.querySelector(".endScreen");
 const playground = document.querySelector(".playground");
-const questionNumber = document.querySelector(".questionNumber");
+// const questionIndex = document.querySelector(".questionNumber");
 const timer = document.getElementById("timer");
 const options = document.getElementById("options");
 const question = document.getElementById("question");
@@ -33,10 +33,11 @@ const quizBody = document.querySelector(".quizBody");
 const loader = document.querySelector(".loader");
 const finalScore = document.querySelector(".finalScore");
 const resultUsername = document.querySelector(".resultUsername");
+
 let start = document.getElementById("start");
 start.addEventListener("click", startQuiz);
 
-let questionIndex = 0;
+let questionIndex = 1;
 let arrayQuestion = [];
 let score = [];
 let count = 30;
@@ -124,3 +125,10 @@ function gethtmlValues(html) {
   txt.innerHTML = html;
   return txt.value;
 }
+//Next Button Code
+let nextBtn = document.getElementById("nextBtn");
+nextBtn.addEventListener("click", () => {
+  questionIndex = questionIndex + 1;
+  document.getElementById("questionIndex").innerHTML = questionIndex;
+  displayQuestions(arrayQuestion[questionIndex]);
+})
