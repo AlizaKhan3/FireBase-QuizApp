@@ -74,16 +74,21 @@ body {
     border: 1px solid #689f38;
 }
 
-.quizBody #options option.correct{
+.correct{
     border-color: #689f38;
     color: #689f38;
     background: #e7f6d5;
 }
 
-.quizBody #options option.Incorrect{
+.Incorrect{
     border-color: #d32f2f;
     color: #d32f2f;
     background: #ffdde0;
+}
+
+.disabled{
+    pointer-events: none;
+
 }
 
 /* --------------Media Queries----------- */
