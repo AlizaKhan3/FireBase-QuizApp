@@ -78,10 +78,10 @@ function loadOptions(questionData) {
   options.innerHTML = " ";
   let correctAnswer = questionData.correct_answer;
   let incorrectAnswers = questionData.incorrect_answers;
-  
+
   // Combine correct and incorrect answers into a single array
   let answers = [...incorrectAnswers];
-  
+
   // Insert the correct answer at a random index
   let randomIndex = Math.floor(Math.random() * (incorrectAnswers.length + 1));
   answers.splice(randomIndex, 0, correctAnswer);
@@ -98,14 +98,29 @@ function loadOptions(questionData) {
 }
 
 function checkAnswer(answerOptions, answers, correctAnswer){
-console.log(answerOptions, answers, correctAnswer);
-let correctElement;
-answers.forEach((answer) =>{
-  if (answer === correctAnswer){
-    correctElement = [...options.childNodes].find((option) => {
-      option.innerText === correctAnswer
-    })
-console.log(correctElement)
+  console.log(answerOptions, answers, correctAnswer);
+  let correctElement;
+  answers.forEach((answer) =>{
+    if (gethtmlValues(answer) === gethtmlValues(correctAnswer)){
+      correctElement = [...options.childNodes].find(
+        (option) => option.innerText === gethtmlValues(correctAnswer)
+      );
+    }
+  });
+  options.childNodes.forEach((option) => {
+    option.disabled = true; // disable all options
+  });
+  if (gethtmlValues(correctAnswer) === answerOptions.innerText) {
+    answerOptions.classList.add("correct"); // add class to the clicked option
+  }else{
+    answerOptions.classList.add("Incorrect"); // add class to the clicked option
+    correctElement.classList.add("correct"); // add class to the correct option
   }
-})
+  console.log(correctElement)
+}
+
+function gethtmlValues(html) {
+  var txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
 }
