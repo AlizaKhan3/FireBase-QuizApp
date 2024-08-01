@@ -85,8 +85,27 @@ function loadOptions(questionData) {
   // Insert the correct answer at a random index
   let randomIndex = Math.floor(Math.random() * (incorrectAnswers.length + 1));
   answers.splice(randomIndex, 0, correctAnswer);
-  
-  console.log(answers);
-
+  // console.log(answers);
+  answers.forEach((answer) => {
+    let option = document.createElement("option");
+    option.innerText = answer;
+    option.addEventListener("click", () => {
+      checkAnswer(option, answers, questionData.correct_answer);
+    })
+    options.append(option);
+  })
   loader.style.display = "none";
+}
+
+function checkAnswer(answerOptions, answers, correctAnswer){
+console.log(answerOptions, answers, correctAnswer);
+let correctElement;
+answers.forEach((answer) =>{
+  if (answer === correctAnswer){
+    correctElement = [...options.childNodes].find((option) => {
+      option.innerText === correctAnswer
+    })
+console.log(correctElement)
+  }
+})
 }
