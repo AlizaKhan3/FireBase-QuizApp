@@ -41,6 +41,7 @@ let questionIndex = 1;
 let arrayQuestion = [];
 let score = [];
 let count = 30;
+let countdown;
 
 function startQuiz() {
   if (username.value !== "") {
@@ -89,13 +90,14 @@ function loadOptions(questionData) {
   // console.log(answers);
   answers.forEach((answer) => {
     let option = document.createElement("option");
-    option.innerText = answer;
+    option.innerHTML = answer;
     option.addEventListener("click", () => {
       checkAnswer(option, answers, questionData.correct_answer);
     })
     options.append(option);
   })
   loader.style.display = "none";
+  displayTime();
 }
 
 function checkAnswer(answerOptions, answers, correctAnswer){
@@ -130,5 +132,22 @@ let nextBtn = document.getElementById("nextBtn");
 nextBtn.addEventListener("click", () => {
   questionIndex = questionIndex + 1;
   document.getElementById("questionIndex").innerHTML = questionIndex;
-  displayQuestions(arrayQuestion[questionIndex]);
+  displayQuestions(arrayQuestion[questionIndex - 1]); // Update questionIndex - 1 since arrays are 0-indexed
+  if (questionIndex == 9) {
+    nextBtn.innerText = "Submit"; // Update the button text
+    // endScreen.style.display = "block";
+    // playground.style.display = "none";
+    // finalScore.innerHTML = `Your final score is ${score.length} out of ${arrayQuestion.length}`;
+  } else {
+    showAnswer();
+  }
 })
+
+function showAnswer(){}
+
+const displayTime = () => {
+  countdown = setInterval(() => {
+    count--;
+  },1000)
+  timer.innerHTML = count;
+};
