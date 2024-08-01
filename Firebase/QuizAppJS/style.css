@@ -62,9 +62,29 @@ body {
     display: none;
 }
 
+.quizBody #options option{
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
 
+.quizBody #options option:hover{
+    border: 1px solid #689f38;
+}
 
+.quizBody #options option.correct{
+    border-color: #689f38;
+    color: #689f38;
+    background: #e7f6d5;
+}
 
+.quizBody #options option.Incorrect{
+    border-color: #d32f2f;
+    color: #d32f2f;
+    background: #ffdde0;
+}
 
 /* --------------Media Queries----------- */
 @media only screen and (max-width:480px) {
