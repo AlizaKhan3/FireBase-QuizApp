@@ -99,11 +99,12 @@ function loadOptions(questionData) {
     options.append(option);
   })
   loader.style.display = "none";
+  
   displayTime();
 }
 
 function checkAnswer(answerOptions, answers, correctAnswer) {
-  console.log(answerOptions, answers, correctAnswer);
+  // console.log(answerOptions, answers, correctAnswer);
   let correctElement;
   answers.forEach((answer) => {
     if (gethtmlValues(answer) === gethtmlValues(correctAnswer)) {
@@ -117,6 +118,7 @@ function checkAnswer(answerOptions, answers, correctAnswer) {
   });
   if (gethtmlValues(correctAnswer) === answerOptions.innerText) {
     answerOptions.classList.add("correct"); // add class to the clicked option
+    score++;
   } else {
     answerOptions.classList.add("Incorrect"); // add class to the clicked option
     correctElement.classList.add("correct"); // add class to the correct option
@@ -142,7 +144,15 @@ nextBtn.addEventListener("click", () => {
   }
 })
 
-function showAnswer() { }
+function showAnswer() {
+  playground.style.display = "none";
+  endScreen.style.display = "block";
+  finalScore.innerHTML = score;
+  resultUsername.innerHTML = username.value;
+  questionIndex.innerHTML = 1;
+  clearInterval(countdown);
+  count = 30;
+}
 
 const displayTime = () => {
   countdown = setInterval(() => {
