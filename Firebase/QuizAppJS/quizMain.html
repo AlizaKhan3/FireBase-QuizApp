@@ -44,7 +44,7 @@
     </div>
     <!-- Open Quiz Page -->
     <div class="playground">
-    <div class="card quizCard ">
+        <div class="card quizCard ">
             <div class="card-body">
                 <div class="quizHeader d-flex align-items-center justify-content-between mb-1">
                     <div><span id="questionIndex">1</span> of 10 Questions</div>
@@ -61,7 +61,20 @@
                     <i class="fa-solid fa-spinner fa-spin"></i>
                 </div>
                 <div class="quizFooter text-end">
-                    <button type="button" class="btn btn-success"  id="nextBtn" data-mdb-ripple-init>Next</button>
+                    <button type="button" class="btn btn-success" id="nextBtn" data-mdb-ripple-init>Next</button>
+                </div>
+            </div>
+            <div class="container endScreen">
+                <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Woah! You Finished the Quiz</h5>
+                        <p class="card-text"><span id="resultUsername"> </span></p>
+                        <p class="card-text">You Scored<span class="finalScore"> 0</span> out of 30</p>
+                        <div class="d-flex justify-content-center mt-2">
+                            <button type="button" class="btn btn-success restartQuiz" data-mdb-ripple-init
+                                id="restartQuiz">Try Again?</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
