@@ -58,7 +58,7 @@ body {
     display: none;
 }
 
-.playground, loader{
+.playground, .loader, .endScreen{
     display: none;
 }
 
@@ -90,6 +90,10 @@ body {
     pointer-events: none;
 
 }
+
+/* .endScreen{
+    display: none;
+} */
 
 /* --------------Media Queries----------- */
 @media only screen and (max-width:480px) {
