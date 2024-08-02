@@ -71,6 +71,8 @@ function loadQuestions() {
 
 function displayQuestions(questionData) {
   console.log(questionData);
+  count = 30;
+  clearInterval(countdown);
   question.innerHTML = questionData.question;
   // questionNumber.innerHTML = questionIndex ++;
   loadOptions(questionData);
@@ -119,12 +121,14 @@ function checkAnswer(answerOptions, answers, correctAnswer) {
     answerOptions.classList.add("Incorrect"); // add class to the clicked option
     correctElement.classList.add("correct"); // add class to the correct option
   }
-  console.log(correctElement)
+  // console.log(correctElement);
+  clearInterval(countdown);
 }
 
 //Next Button Code
 let nextBtn = document.getElementById("nextBtn");
 nextBtn.addEventListener("click", () => {
+  timer.innerHTML = "30";
   questionIndex = questionIndex + 1;
   document.getElementById("questionIndex").innerHTML = questionIndex;
   displayQuestions(arrayQuestion[questionIndex - 1]); // Update questionIndex - 1 since arrays are 0-indexed
@@ -147,11 +151,13 @@ const displayTime = () => {
 
     if (count == 0) {
       clearInterval(countdown);
-      document.querySelectorAll('option').forEach((option) => {
-        option.disabled = true; // disable all options
-      })
+
+      options.childNodes.forEach((option) => {
+      option.disabled = true; // disable all options
+      });
     }
   }, 1000)
+
 };
 
 
