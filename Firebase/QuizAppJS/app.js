@@ -148,8 +148,8 @@ function showAnswer() {
   endScreen.style.display = "block";
   finalScore.innerHTML = score;
   resultUsername.innerHTML = username.value;
-  questionIndex.innerHTML = 1;
-  clearInterval(countdown);
+  question.innerHTML = 1;
+  clearInterval(countdown); 
   count = 30;
 }
 
