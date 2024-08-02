@@ -100,11 +100,11 @@ function loadOptions(questionData) {
   displayTime();
 }
 
-function checkAnswer(answerOptions, answers, correctAnswer){
+function checkAnswer(answerOptions, answers, correctAnswer) {
   console.log(answerOptions, answers, correctAnswer);
   let correctElement;
-  answers.forEach((answer) =>{
-    if (gethtmlValues(answer) === gethtmlValues(correctAnswer)){
+  answers.forEach((answer) => {
+    if (gethtmlValues(answer) === gethtmlValues(correctAnswer)) {
       correctElement = [...options.childNodes].find(
         (option) => option.innerText === gethtmlValues(correctAnswer)
       );
@@ -115,18 +115,13 @@ function checkAnswer(answerOptions, answers, correctAnswer){
   });
   if (gethtmlValues(correctAnswer) === answerOptions.innerText) {
     answerOptions.classList.add("correct"); // add class to the clicked option
-  }else{
+  } else {
     answerOptions.classList.add("Incorrect"); // add class to the clicked option
     correctElement.classList.add("correct"); // add class to the correct option
   }
   console.log(correctElement)
 }
 
-function gethtmlValues(html) {
-  var txt = document.createElement("textarea");
-  txt.innerHTML = html;
-  return txt.value;
-}
 //Next Button Code
 let nextBtn = document.getElementById("nextBtn");
 nextBtn.addEventListener("click", () => {
@@ -143,11 +138,25 @@ nextBtn.addEventListener("click", () => {
   }
 })
 
-function showAnswer(){}
+function showAnswer() { }
 
 const displayTime = () => {
   countdown = setInterval(() => {
     count--;
-  },1000)
-  timer.innerHTML = count;
+    timer.innerHTML = count;
+
+    if (count == 0) {
+      clearInterval(countdown);
+      document.querySelectorAll('option').forEach((option) => {
+        option.disabled = true; // disable all options
+      })
+    }
+  }, 1000)
 };
+
+
+function gethtmlValues(html) {
+  var txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+}
