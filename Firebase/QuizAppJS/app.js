@@ -99,7 +99,6 @@ function loadOptions(questionData) {
     options.append(option);
   })
   loader.style.display = "none";
-  
   displayTime();
 }
 
