@@ -25,7 +25,6 @@ const username = document.getElementById("username");
 const startScreen = document.querySelector(".startScreen");
 const endScreen = document.querySelector(".endScreen");
 const playground = document.querySelector(".playground");
-// const questionIndex = document.querySelector(".questionNumber");
 const timer = document.getElementById("timer");
 const options = document.getElementById("options");
 const question = document.getElementById("question");
@@ -135,11 +134,7 @@ nextBtn.addEventListener("click", () => {
   displayQuestions(arrayQuestion[questionIndex - 1]); // Update questionIndex - 1 since arrays are 0-indexed
   if (questionIndex == 9) {
     nextBtn.innerText = "Submit"; // Update the button text
-    // endScreen.style.display = "block";
-    // playground.style.display = "none";
-    // finalScore.innerHTML = `Your final score is ${score.length} out of ${arrayQuestion.length}`;
-  } else {
-    showAnswer();
+    showAnswer(); // Call showAnswer() only when all questions are completed
   }
 })
 
@@ -168,7 +163,6 @@ const displayTime = () => {
   }, 1000)
 
 };
-
 
 function gethtmlValues(html) {
   var txt = document.createElement("textarea");
