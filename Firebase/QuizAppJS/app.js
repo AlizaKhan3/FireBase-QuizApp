@@ -37,7 +37,7 @@ let start = document.getElementById("start");
 start.addEventListener("click", startQuiz);
 
 let arrayQuestion = [];
-let questionIndex = 1;
+let questionIndex = 0;
 let score = 0;
 let count = 30;
 let countdown;
@@ -129,8 +129,8 @@ function checkAnswer(answerOptions, answers, correctAnswer) {
 }
 
 //Next Button Code
-let nextBtn = document.getElementById("nextBtn");
-nextBtn.addEventListener("click", () => {
+// let nextBtn = document.getElementById("nextBtn");
+let nextBtnClickListener = () => {
   timer.innerHTML = "30";
   questionIndex = questionIndex + 1;
   document.getElementById("questionIndex").innerHTML = questionIndex;
@@ -139,7 +139,20 @@ nextBtn.addEventListener("click", () => {
     nextBtn.innerText = "Submit"; // Update the button text
     showAnswer(); // Call showAnswer() only when all questions are completed
   }
-})
+};
+
+nextBtn.addEventListener("click", nextBtnClickListener);
+
+// nextBtn.addEventListener("click", () => {
+//   timer.innerHTML = "30";
+//   questionIndex = questionIndex + 1;
+//   document.getElementById("questionIndex").innerHTML = questionIndex;
+//   displayQuestions(arrayQuestion[questionIndex - 1]); // Update questionIndex - 1 since arrays are 0-indexed
+//   if (questionIndex == 9) {
+//     nextBtn.innerText = "Submit"; // Update the button text
+//     showAnswer(); // Call showAnswer() only when all questions are completed
+//   }
+// })
 
 function showAnswer() {
   playground.style.display = "none";
@@ -149,7 +162,7 @@ function showAnswer() {
   endScreen.style.alignItems = "center";
   finalScore.innerHTML = score;
   resultUsername.innerText = username.value;
-  question.innerHTML = 1;
+  question.innerHTML = 0;
   clearInterval(countdown); 
   count = 30;
 }
@@ -167,7 +180,6 @@ const displayTime = () => {
       });
     }
   }, 1000)
-
 };
 
 function gethtmlValues(html) {
@@ -176,14 +188,28 @@ function gethtmlValues(html) {
   return txt.value;
 }
 
-let restartQuiz = document.getElementById("restartQuiz");
-restartQuiz.addEventListener("click" , restartQuiz = () => {
-  questionIndex = 1;
-  startQuiz();
-  endScreen.style.display = "none"
-});
-
-// let restart = (() => {
-//   loadQuestions();
-//   // window.location.href = "./quizMain.html";
+// let restartQuiz = document.getElementById("restartQuiz");
+// restartQuiz.addEventListener("click" , restartQuiz = () => {
+//   questionIndex = 1;
+//   startQuiz();
+//   endScreen.style.display = "none"
 // });
+
+let restartQuiz = document.getElementById("restartQuiz");
+restartQuiz.addEventListener("click", () => {
+  questionIndex = 1;
+  nextBtn.removeEventListener("click", nextBtnClickListener);
+  nextBtnClickListener = () => {
+    timer.innerHTML = "30";
+    questionIndex = questionIndex + 1;
+    document.getElementById("questionIndex").innerHTML = questionIndex;
+    displayQuestions(arrayQuestion[questionIndex - 1]); // Update questionIndex - 1 since arrays are 0-indexed
+    if (questionIndex == 9) {
+      nextBtn.innerText = "Submit"; // Update the button text
+      showAnswer(); // Call showAnswer() only when all questions are completed
+    }
+  };
+  nextBtn.addEventListener("click", nextBtnClickListener);
+  startQuiz();
+  endScreen.style.display = "none";
+});
