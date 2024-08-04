@@ -36,9 +36,9 @@ const resultUsername = document.querySelector(".resultUsername");
 let start = document.getElementById("start");
 start.addEventListener("click", startQuiz);
 
-let questionIndex = 1;
 let arrayQuestion = [];
-let score = [];
+let questionIndex = 1;
+let score = 0;
 let count = 30;
 let countdown;
 
@@ -48,7 +48,9 @@ function startQuiz() {
     startScreen.style.display = "none";
     playground.style.display = "block";
     loader.style.display = "block";
-
+    endScreen.style.display = "none";
+    nextBtn.innerHTML = "Next";
+    quizBody.style.display = "none";
     loadQuestions();
   } else {
     username.style.border = "0.5px solid red"
@@ -97,6 +99,7 @@ function loadOptions(questionData) {
     })
     options.append(option);
   })
+  quizBody.style.display = "block";
   loader.style.display = "none";
   displayTime();
 }
@@ -141,8 +144,11 @@ nextBtn.addEventListener("click", () => {
 function showAnswer() {
   playground.style.display = "none";
   endScreen.style.display = "block";
+  endScreen.style.display = "flex"
+  endScreen.style.justifyContent = "center";
+  endScreen.style.alignItems = "center";
   finalScore.innerHTML = score;
-  resultUsername.innerHTML = username.value;
+  resultUsername.innerText = username.value;
   question.innerHTML = 1;
   clearInterval(countdown); 
   count = 30;
@@ -169,3 +175,15 @@ function gethtmlValues(html) {
   txt.innerHTML = html;
   return txt.value;
 }
+
+let restartQuiz = document.getElementById("restartQuiz");
+restartQuiz.addEventListener("click" , restartQuiz = () => {
+  questionIndex = 1;
+  startQuiz();
+  endScreen.style.display = "none"
+});
+
+// let restart = (() => {
+//   loadQuestions();
+//   // window.location.href = "./quizMain.html";
+// });
