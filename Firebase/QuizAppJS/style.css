@@ -1,6 +1,6 @@
 * {
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     box-sizing: border-box;
     font-family: 'Poppins';
 }
@@ -38,31 +38,33 @@ body {
 #username:focus {
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+}
 
-.btn{
+.btn {
     cursor: pointer;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
-.quizBody{
+.quizBody {
     padding: 10px 0;
     margin: 10px 0;
 }
 
-.loader i{
+.loader i {
     font-size: 50px;
 }
 
-.playground{
+.playground {
     display: none;
 }
 
-.playground, .loader, .endScreen{
+.playground,
+.loader,
+.endScreen {
     display: none;
 }
 
-.quizBody #options option{
+.quizBody #options option {
     padding: 10px;
     margin: 10px 0;
     cursor: pointer;
@@ -70,47 +72,33 @@ body {
     border-radius: 5px;
 }
 
-.quizBody #options option:hover{
+.quizBody #options option:hover {
     border: 1px solid #689f38;
 }
 
-.correct{
+.correct {
     border-color: #689f38;
     color: #689f38;
     background: #e7f6d5;
 }
 
-.Incorrect{
+.Incorrect {
     border-color: #d32f2f;
     color: #d32f2f;
     background: #ffdde0;
 }
 
-.disabled{
+.disabled {
     pointer-events: none;
 
 }
 
-/* .endScreen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } */
-
-/* .endScreen{
-    display: none;
-} */
-
 /* --------------Media Queries----------- */
 @media only screen and (max-width:480px) {
-    .optionsCard {
-        margin: auto 0.6rem !important;
-        /* margin-right: 0.6rem !important; */
-        /* font-size: 1rem; */
-    }
-    .quizCard{
-        margin: auto 0.6rem !important;
-        margin-right: 0px !important;
+    .quizCard {
+        margin: auto 0.6rem;
+        /* position: fixed; */
+        /* margin-right: 0px !important; */
     }
 
     .input-group {
@@ -120,5 +108,4 @@ body {
     .btn {
         width: 100%;
     }
-
 }
