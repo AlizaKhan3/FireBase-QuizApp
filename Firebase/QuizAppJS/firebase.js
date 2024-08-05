@@ -2,12 +2,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/fireba
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,  onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyACwCdxNhLnEE4AvdXdXjCphFTcqk8aZ8Y",
-    authDomain: "quiz-app-by-aliza.firebaseapp.com",
-    projectId: "quiz-app-by-aliza",
-    storageBucket: "quiz-app-by-aliza.appspot.com",
-    messagingSenderId: "272373264068",
-    appId: "1:272373264068:web:da2a0ac9a1b75f474c2391"
   };
 
 // Initialize Firebase
