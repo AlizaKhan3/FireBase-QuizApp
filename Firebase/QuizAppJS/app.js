@@ -124,7 +124,7 @@ function checkAnswer(answerOptions, answers, correctAnswer) {
     answerOptions.classList.add("Incorrect"); // add class to the clicked option
     correctElement.classList.add("correct"); // add class to the correct option
   }
-  // console.log(correctElement);
+  console.log(correctElement);
   clearInterval(countdown);
 }
 
